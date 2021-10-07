@@ -1,6 +1,7 @@
 public class CustomPair {
         private Companies company;
         private Programmer program;
+        public static int rowCounter=0;
 
     public Companies getCompany() {
         return company;
@@ -29,26 +30,52 @@ public class CustomPair {
         two.setProgram(temp);
     }
 
+    public int getRowCounter(){
+        return rowCounter;
+    }
+
+    public void printPairs(CustomPair[] Pairs){
+        int len = Pairs.length;
+        for (int i = 0; i < len; i++) {
+            int z = i;
+            z+=1;
+            System.out.println("Pair #" + (z));
+            System.out.println(Pairs[i].getCompany().getName());
+            System.out.println(Pairs[i].getProgram().getName());
+        }
+    }
+
     public void swapsies(CustomPair one, CustomPair two){
         boolean C2 = false;
         boolean P1 = false;
-        String firstString = one.getProgram().toString();
-        int firstInt = Integer.parseInt(firstString);
-        String secondString = two.getProgram().toString();
-        int secondInt = Integer.parseInt(secondString);
-        String firstS = one.getCompany().toString();
-        char finalS1 = firstS.charAt(0);
-        String secondS = two.getCompany().toString();
-        char finalS2 = secondS.charAt(0);
-        if(one.getCompany().getIndex(firstInt, one.getCompany()) > two.getCompany().getIndex(secondInt, two.getCompany())){
+        int prog1 = one.getProgram().getName();
+        int prog2 = two.getProgram().getName();
+        char comp1 = one.getCompany().getName();
+        char comp2 = two.company.getName();
+        if(two.getCompany().getIndex(prog1, two.getCompany())-two.getCompany().getIndex(prog2, two.getCompany()) < 0){
             C2 = true;
-        }
-        if(one.getProgram().getIndex(finalS1, one.getProgram()) > two.getProgram().getIndex(finalS2, two.getProgram())){
-            P1 = true;
+            if(one.getProgram().getIndex(comp1, one.getProgram())-two.getProgram().getIndex(comp2, one.getProgram())>0){
+                P1 = true;
+            }
         }
         if(C2 && P1){
             one.swapProgrammer(one, two);
-            one.swapCompany(one, two);
+            rowCounter=0;
         }
+        else{
+            rowCounter++;
+        }
+    }
+
+    public CustomPair[] matching(CustomPair[] Pairs) {
+        int numPairs = Pairs.length;
+        while (Pairs[0].getRowCounter() < numPairs+1) {
+            for (int i = 0; i < numPairs; i++) {
+                for (int j = 0; j < numPairs; j++) {
+                    Pairs[i].swapsies(Pairs[i], Pairs[j]);
+                }
+            }
+        }
+        return Pairs;
     }
 }

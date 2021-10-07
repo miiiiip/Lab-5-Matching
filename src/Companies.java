@@ -1,8 +1,17 @@
 public class Companies {
 
-    int prefrences[];
+    int[] prefrences;
+    char name;
 
     public Companies() {
+    }
+
+    public char getName() {
+        return name;
+    }
+
+    public void setName(char name) {
+        this.name = name;
     }
 
     public int[] getPrefrences() {

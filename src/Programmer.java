@@ -1,8 +1,20 @@
 public class Programmer
 {
 
-    char prefrences[];
+    char[] prefrences;
+
+    int name;
+
+
     public Programmer() {
+    }
+
+    public int getName() {
+        return name;
+    }
+
+    public void setName(int name) {
+        this.name = name;
     }
 
     public char[] getPrefrences() {
