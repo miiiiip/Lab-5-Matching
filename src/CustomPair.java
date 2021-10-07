@@ -41,7 +41,7 @@ public class CustomPair {
             z+=1;
             System.out.println("Pair #" + (z));
             System.out.println(Pairs[i].getCompany().getName());
-            System.out.println(Pairs[i].getProgram().getName());
+            System.out.println(Pairs[i].getProgram().getName()+"\n");
         }
     }
 
