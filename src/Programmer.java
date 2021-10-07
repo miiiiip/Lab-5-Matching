@@ -23,7 +23,7 @@ public class Programmer
         }
         return points;
     }
-    public int getIndex(int a, Programmer b){
+    public int getIndex(char a, Programmer b){
         char[] temp = b.getPrefrences();
         int i = 0;
         while(temp[i]!=a){
