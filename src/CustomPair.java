@@ -69,7 +69,7 @@ public class CustomPair {
 
     public CustomPair[] matching(CustomPair[] Pairs) {
         int numPairs = Pairs.length;
-        while (Pairs[0].getRowCounter() < numPairs+1) {
+        while (Pairs[0].getRowCounter() < numPairs) {
             for (int i = 0; i < numPairs; i++) {
                 for (int j = 0; j < numPairs; j++) {
                     Pairs[i].swapsies(Pairs[i], Pairs[j]);

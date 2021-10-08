@@ -1,13 +1,5 @@
 public class Main {
 
-    public void setProgrammer(char[] prefrences, Programmer j) {
-        j.setPrefrences(prefrences);
-    }
-
-    public void setCompany(int[] prefrences, Companies j) {
-        j.setPrefrences(prefrences);
-    }
-
     public static void main(String[] args) {
         Programmer z1 = new Programmer();Programmer z2 = new Programmer();Programmer z3 = new Programmer();Programmer z4 = new Programmer();Programmer z5 = new Programmer();
 
@@ -29,7 +21,7 @@ public class Main {
 
         k.setCompany(a);k.setProgram(z3);m.setCompany(b);m.setProgram(z2);v.setCompany(c);v.setProgram(z1);km.setCompany(d);km.setProgram(z4);mv.setCompany(e);mv.setProgram(z5);
 
-        CustomPair[] Pairs = {k, m, v, km, mv};
+        CustomPair[] Pairs = {mv, km, v, m, k};
         k.printPairs(Pairs);
         System.out.println("----------------\n|AFTER MATCHING|\n----------------\n");
         k.matching(Pairs);

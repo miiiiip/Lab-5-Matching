@@ -2,9 +2,7 @@ public class Programmer
 {
 
     char[] prefrences;
-
     int name;
-
 
     public Programmer() {
     }
@@ -25,16 +23,6 @@ public class Programmer
         this.prefrences = prefrences;
     }
 
-    public int getValue(char a, Programmer b){
-        int i =0;
-        int points = b.getPrefrences().length;
-        char[] temp = b.getPrefrences();
-        while(temp[i]!=a){
-            i++;
-            points--;
-        }
-        return points;
-    }
     public int getIndex(char a, Programmer b){
         char[] temp = b.getPrefrences();
         int i = 0;
