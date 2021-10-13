@@ -1,0 +1,6 @@
+The only methods which contain loops are Swapsies() and matching().
+Swapsies will always do 1 or 2 comparisons, depending on whether the first comparison passes.
+In matching(), while rowCounter < n^2, it will iterate through each pair, comparing it to every other pair and attempting swapsies on them
+This will always need to run n^2 times at least, as that's the number of comparisons necessary to ensure that every pair is satisfactory.
+It may run more times than this, but any extra swaps done will only increase the runtime by an additional n or so comparisons.
+And as n^2+n E Big Theta(n^2), we believe the time complexity of Matching to be Big O(n^2)
